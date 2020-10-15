@@ -64,7 +64,7 @@ public class Gym {
     }
 
     public String findCustomerInList(List<Customer> searchForCustomerList, String input, Path fileOut) {
-            String text = "Den personen finns inte i listan!";
+            String text = "Den personen har inget medlemsskap i det här gymmet!";
             for (Customer c : searchForCustomerList) {
                 if (c.getName().equalsIgnoreCase(input.trim()) ||
                         c.getSocialSecurityNumber().equals(input.trim())) {
@@ -89,7 +89,7 @@ public class Gym {
         if(p.getYears()==0 || (p.getYears()==1 && p.getMonths()==0 && p.getDays()==0)){
             addActiveCustomerInFile(c,fileOut);
             return "Gymkortet är aktivt och " + c.getName() +
-                    "s träningstillfälle är tillagt i filen \"" + fileOut + "\"";
+                    "s \nträningstillfälle är tillagt i filen \"" + fileOut + "\"";
         }
         else
             return c.getName() + "s gymkort har tyvärr gått ut!";
